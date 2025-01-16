@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -11,7 +11,15 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        gameOver: "red",
+        titleRound: "greenyellow"
       },
+      spacing: {
+        min: '1rem',
+        mid: '2rem',
+        big: '4rem',
+        max: '8rem'
+      }
     },
   },
   plugins: [],
