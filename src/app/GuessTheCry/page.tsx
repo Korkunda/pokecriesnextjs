@@ -35,13 +35,12 @@ export type Pokemon = {
     name: string;
 };
 
-
 export default function GuessTheCry({numPokemon, numOptions, numLives, gameMode, leaderboard}: GuessTheCryProps){
     //NAVIGATION
     const router = useRouter();
 
     //SET GAME
-    let [game, setGame] = useState<Game>({
+    const [game, setGame] = useState<Game>({
         status: "notstarted", lives: numLives, guesses: 0, options: {
             currentOptions: [], 
             correctAnswer: {pokemon: null, audio: null, checkAnswer: null}}, 
@@ -66,25 +65,25 @@ export default function GuessTheCry({numPokemon, numOptions, numLives, gameMode,
     //----------------GENERATE GAME-------------------//
     function generateOptions(totalOptions: number){
         let pokemonArray: Pokemon[] = allPokemon.map(mon => mon) 
-        let optionsArray: Option[] = []
+        const optionsArray: Option[] = []
 
-        let randomOption: number = Math.floor(Math.random() * pokemonArray.length) 
-        let foundOption: Option = {pokemon: pokemonArray[randomOption], audio: `/cries/${pokemonArray[randomOption].id}`, checkAnswer: () => checkAnswer(foundOption)}
+        const randomOption: number = Math.floor(Math.random() * pokemonArray.length) 
+        const foundOption: Option = {pokemon: pokemonArray[randomOption], audio: `/cries/${pokemonArray[randomOption].id}`, checkAnswer: () => checkAnswer(foundOption)}
         
         //generate all options
         while(optionsArray.length<totalOptions){
-            let randomOption: number = Math.floor(Math.random() * pokemonArray.length) 
-            let foundOption: Option = {pokemon: pokemonArray[randomOption], audio: `/cries/${pokemonArray[randomOption].id}`, checkAnswer: () => checkAnswer(foundOption)}
+            const randomOption: number = Math.floor(Math.random() * pokemonArray.length) 
+            const foundOption: Option = {pokemon: pokemonArray[randomOption], audio: `/cries/${pokemonArray[randomOption].id}`, checkAnswer: () => checkAnswer(foundOption)}
             
             optionsArray.push(foundOption) 
             pokemonArray = pokemonArray.filter(mon => mon !== foundOption.pokemon)
         }  
 
-        let answerNumber: number = Math.floor(Math.random() * totalOptions)
-        let correctAnswer: Option = optionsArray[answerNumber]
+        const answerNumber: number = Math.floor(Math.random() * totalOptions)
+        const correctAnswer: Option = optionsArray[answerNumber]
         //console.log(correctAnswer)
 
-        let audioFile: HTMLAudioElement = new Audio(`/cries/${correctAnswer.pokemon!.id}.ogg`)
+        const audioFile: HTMLAudioElement = new Audio(`/cries/${correctAnswer.pokemon!.id}.ogg`)
         audioFile.volume = 0.1
         
         setGame(prevGame => ({...prevGame, 

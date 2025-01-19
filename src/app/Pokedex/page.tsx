@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from 'next/link'
 import PokemonSquare from "./PokemonOptionProps";
 
 export type Pokemon = {
@@ -52,84 +51,84 @@ export default function Pokedex(){
 
 
     function generateGenerationsPokemonLists(){
-        let pokemonArray: Pokemon[] = allPokemon.map(mon => mon) 
+        const pokemonArray: Pokemon[] = allPokemon.map(mon => mon) 
 
         //gen1
-        let gen1: Option[] = []
+        const gen1: Option[] = []
         for(let i = 1; i<151 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen1.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen1(gen1)
         //gen2
-        let gen2: Option[] = []
+        const gen2: Option[] = []
         for(let i = 152; i<251 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen2.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen2(gen2)
         //gen3
-        let gen3: Option[] = []
+        const gen3: Option[] = []
         for(let i = 252; i<386 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen3.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen3(gen3)
         //gen4
-        let gen4: Option[] = []
+        const gen4: Option[] = []
         for(let i = 387; i<493 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen4.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen4(gen4)
         //gen5
-        let gen5: Option[] = []
+        const gen5: Option[] = []
         for(let i = 494; i<649 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen5.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen5(gen5)
         //gen6
-        let gen6: Option[] = []
+        const gen6: Option[] = []
         for(let i = 650; i<721 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen6.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen6(gen6)
         //gen7
-        let gen7: Option[] = []
+        const gen7: Option[] = []
         for(let i = 722; i<809 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen7.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen7(gen7)
         //gen8
-        let gen8: Option[] = []
+        const gen8: Option[] = []
         for(let i = 810; i<905 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen8.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen8(gen8)
         //gen9
-        let gen9: Option[] = []
+        const gen9: Option[] = []
         for(let i = 906; i<1025 + 1; i++){
-            let pokemonOption: Pokemon = pokemonArray[i - 1]
-            let audioFile: string = `/cries/${pokemonOption.id}.ogg`
+            const pokemonOption: Pokemon = pokemonArray[i - 1]
+            const audioFile: string = `/cries/${pokemonOption.id}.ogg`
             gen9.push({pokemon: pokemonOption, cry: audioFile});
         }
         setGen9(gen9)
     }
 
     function playSound(file: string){
-        let audio = new Audio(file)
+        const audio = new Audio(file)
         audio.volume = 0.1
         audio.play()
     }

@@ -8,7 +8,7 @@ type PokemonOptionProps = {
 };
 
 export default function PokemonSquare({ id, playSound }: PokemonOptionProps){
-    let sprite: string = `/spritesOld/${id}.png`
+    const sprite: string = `/spritesOld/${id}.png`
     return(
         <button className="choice-btn" onClick={() => playSound()}>
             <img src={sprite} alt={`pokemon ${id}`} />
