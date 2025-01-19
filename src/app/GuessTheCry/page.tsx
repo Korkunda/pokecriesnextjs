@@ -35,7 +35,9 @@ export type Pokemon = {
     name: string;
 };
 
-export default function GuessTheCry({numPokemon, numOptions, numLives, gameMode, leaderboard}: GuessTheCryProps){
+export default function GuessTheCry(props: GuessTheCryProps){
+    const { numPokemon, numOptions, numLives, gameMode, leaderboard } = props;
+    
     //NAVIGATION
     const router = useRouter();
 
