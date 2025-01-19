@@ -47,7 +47,7 @@ export default function GuessTheCry({numPokemon, numOptions, numLives, gameMode,
             audio: null
     })
 
-    let audioBtn = `/icons/audioBtn.png`
+    const audioBtn = `/icons/audioBtn.png`
 
     //-----------------GET ALL POKEMON------------------//
     const [allPokemon, setAllPokemon] = useState<Pokemon[]>([])
