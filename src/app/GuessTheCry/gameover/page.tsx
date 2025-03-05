@@ -4,8 +4,7 @@ import {useState} from "react"
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link'
 
-export default function GameOver(){
-    
+const GameOver = () => {
     const router = useRouter();
     const searchParams = useSearchParams();
 
@@ -89,3 +88,6 @@ export default function GameOver(){
         </>
     )
 }
+
+
+export default GameOver;

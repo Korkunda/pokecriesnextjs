@@ -27,7 +27,7 @@ export interface Pokemon {
     name: string;
 }
 
-const GuessTheCry: React.FC = () => {
+const GuessTheCry = () => {
     const searchParams = useSearchParams();
 
     const numPokemon = Number(searchParams.get("numPokemon")) || 0;
