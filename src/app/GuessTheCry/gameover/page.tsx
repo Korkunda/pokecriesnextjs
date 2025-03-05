@@ -73,7 +73,7 @@ export default function GameOver(){
                             className="insert-name"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
-                            placeholder="Enter your name"
+                            placeholder=" Enter your name"
                         />
                         <button type="submit" className="button-default">Record Score</button>
                     </form>

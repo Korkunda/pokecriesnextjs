@@ -1,7 +1,7 @@
 import React from "react"
 import type { Option, Pokemon } from "../page.tsx"
 
-type OptionProps = {
+interface OptionProps {
     checkAnswer: (pokemon: Pokemon) => void;
     option: Option;
 }
