@@ -1,10 +1,20 @@
 "use client";
 
+import { Suspense } from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link'
 import Options from "./components/Options"
 import { useSearchParams } from "next/navigation";
+
+
+const GuessTheCry = () => {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <GuessTheCryContent />
+        </Suspense>
+    );
+};
 
 interface Game {
     status: string;
@@ -27,7 +37,7 @@ export interface Pokemon {
     name: string;
 }
 
-const GuessTheCry = () => {
+const GuessTheCryContent = () => {
     const searchParams = useSearchParams();
 
     const numPokemon = Number(searchParams.get("numPokemon")) || 0;

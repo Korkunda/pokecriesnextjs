@@ -1,18 +1,18 @@
 "use client";
 
-import {useState} from "react"
+import { Suspense } from "react";
+import { useState } from "react"
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link'
-import { Suspense } from "react";
 
 
 const GameOver = () => {
     return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <GameOverContent />
-      </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>
+            <GameOverContent />
+        </Suspense>
     );
-  };
+};  
 
 const GameOverContent = () => {
     const searchParams = useSearchParams();
