@@ -5,8 +5,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link'
 
 const GameOver = () => {
-    const router = useRouter();
     const searchParams = useSearchParams();
+    const router = useRouter();
 
     const correctAnswer = searchParams.get("correctAnswer");
     const score = searchParams.get("score") || "0";
